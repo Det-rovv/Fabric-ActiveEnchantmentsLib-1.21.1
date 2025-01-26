@@ -11,8 +11,5 @@ public class ActiveEnchantmentsLib implements ModInitializer
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
-	public void onInitialize()
-	{
-		LOGGER.info("Hello Fabric world!");
-	}
+	public void onInitialize() {}
 }
