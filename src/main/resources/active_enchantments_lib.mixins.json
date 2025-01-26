@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.detrovv.active_enchantments_lib.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

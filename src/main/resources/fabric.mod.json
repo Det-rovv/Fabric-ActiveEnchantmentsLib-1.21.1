@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "active_enchantments_lib",
+	"version": "${version}",
+	"name": "ActiveEnchantmentsLib",
+	"description": "A small lib that allows your enchantments to apply in the player's inventory and provides few utilities",
+	"authors": [
+		"Detrovv"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/active_enchantments_lib/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLib"
+		],
+		"fabric-datagen": [
+			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLibDataGenerator"
+		],
+		"client": [
+			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLibClient"
+		]
+	},
+	"mixins": [
+		"active_enchantments_lib.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
