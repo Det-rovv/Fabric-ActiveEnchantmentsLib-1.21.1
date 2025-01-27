@@ -17,9 +17,6 @@
 	"entrypoints": {
 		"main": [
 			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLib"
-		],
-		"fabric-datagen": [
-			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLibDataGenerator"
 		]
 	},
 	"mixins": [
