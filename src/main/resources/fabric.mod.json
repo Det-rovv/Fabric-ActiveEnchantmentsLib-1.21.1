@@ -20,9 +20,6 @@
 		],
 		"fabric-datagen": [
 			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLibDataGenerator"
-		],
-		"client": [
-			"net.detrovv.active_enchantments_lib.ActiveEnchantmentsLibClient"
 		]
 	},
 	"mixins": [
