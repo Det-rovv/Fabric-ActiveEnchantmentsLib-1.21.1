@@ -9,6 +9,7 @@ import net.minecraft.enchantment.EnchantmentEffectContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -31,7 +32,12 @@ public abstract class InventoryEnchantmentTickMixin extends PlayerEntity
 	{
 		if (getWorld() instanceof ServerWorld serverWorld)
 		{
-			var inventory = getInventory().main;
+			ItemStack mainHandStack = getMainHandStack();
+			var inventory = getInventory().main
+					.stream()
+					.filter((itemStack) -> itemStack != mainHandStack
+							&& itemStack.getItem() != Items.ENCHANTED_BOOK)
+					.toList();
 
 			EnchantmentUtil.iterateEnchantments(inventory, (itemStack, component,
 															enchantmentEntry, enchantment) ->
@@ -43,7 +49,6 @@ public abstract class InventoryEnchantmentTickMixin extends PlayerEntity
 				}
 			});
 		}
-
 	}
 
 	private static void applyEnchantmentTickEffect(ServerWorld serverWorld, LivingEntity entity,
